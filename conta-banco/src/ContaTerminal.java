@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        carregaDados();
+        criarConta();
     }
 
-    private static void carregaDados() {
+    public static void criarConta() {
 
         int numero;
         String agencia;
@@ -48,7 +48,7 @@ public class ContaTerminal {
         }
     }
 
-    private static void exibirMensagem(String mensagem) {
+    public static void exibirMensagem(String mensagem) {
         System.out.println(mensagem);
     }
 }
