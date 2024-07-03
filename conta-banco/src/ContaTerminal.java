@@ -6,45 +6,40 @@ public class ContaTerminal {
         criarConta();
     }
 
-    public static void criarConta() {
-
-        int numero;
-        String agencia;
-        String nomeCliente;
-        double saldo;
+    public static void criarConta() throws Exception {
 
         // TODO: Obter pelo o scanner os valores digitado no terminal.
-        Scanner scanner = new Scanner(System.in);
+        Scanner terminal = new Scanner(System.in);
 
         try {
             // TODO: Exibir as mensagens para nosso usuário.
             exibirMensagem("Por favor, digite o número da Agência !");
-            agencia = scanner.next();
+            String agencia = terminal.next();
 
             exibirMensagem("Por favor, digite o número da Conta !");
-            numero = scanner.nextInt();
-            scanner.nextLine();
+            int numero = terminal.nextInt();
+            terminal.nextLine();
 
             exibirMensagem("Por favor, digite o Nome do cliente !");
-            nomeCliente = scanner.nextLine();
+            String nomeCliente = terminal.nextLine();
 
             exibirMensagem("Por favor, digite o Valor !");
-            String saldoInput = scanner.next();
-            saldo = Double.parseDouble(saldoInput.replace(",", "."));
+            String saldoInput = terminal.next();
+            double saldo = Double.parseDouble(saldoInput.replace(",", "."));
 
             // TODO: Exibir a mensagem da conta criada.
             System.out.println("Olá " + nomeCliente +
                     ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia +
                     " conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
 
-        } catch (InputMismatchException expVerificaCampoNumeroESaldo) {
+        } catch (InputMismatchException ExceptionVerificaCampoNumeroESaldo) {
             System.out.println("Os campos número e saldo precisam ser numéricos.");
-        } catch (NumberFormatException expVerificarCampoSaldo) {
+        } catch (NumberFormatException ExceptionVerificarCampoSaldo) {
             System.out.println("O campo saldo precisa ser numérico.");
-        } catch (Exception expVerificarCampos) {
+        } catch (Exception ExceptionVerificarCampos) {
             System.out.println("Ocorreu um erro. Verifique se os valores inseridos estão corretos.");
         } finally {
-            scanner.close();
+            terminal.close();
         }
     }
 
