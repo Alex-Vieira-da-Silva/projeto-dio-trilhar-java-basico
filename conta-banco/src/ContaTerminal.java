@@ -6,7 +6,7 @@ public class ContaTerminal {
         criarConta();
     }
 
-    public static void criarConta() throws Exception {
+    public static void criarConta() {
 
         // TODO: Obter pelo o scanner os valores digitado no terminal.
         Scanner terminal = new Scanner(System.in);
