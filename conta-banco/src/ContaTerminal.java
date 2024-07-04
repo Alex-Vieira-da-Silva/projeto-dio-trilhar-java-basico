@@ -6,7 +6,7 @@ public class ContaTerminal {
         criarConta();
     }
 
-    public static void criarConta() {
+    static void criarConta() {
 
         // TODO: Obter pelo o scanner os valores digitado no terminal.
         Scanner terminal = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class ContaTerminal {
         }
     }
 
-    public static void exibirMensagem(String mensagem) {
+    static void exibirMensagem(String mensagem) {
         System.out.println(mensagem);
     }
 }
